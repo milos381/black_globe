@@ -1,4 +1,3 @@
-require "black_globe/version"
 require "open-uri"
 require 'net/http'
 require 'json'
