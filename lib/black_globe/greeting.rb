@@ -7,6 +7,7 @@ class Greet
     ""
     ]
     @country_array = [
+    "United States",
     "United Arab Emirates",
     "Argentina",
     "Australia",
