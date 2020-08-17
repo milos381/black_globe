@@ -1,1 +1,2 @@
-BlackGlobe.new
+require_relative "../lib/enviroment.rb"
+BlackGlobe::Cli.new.greeting
