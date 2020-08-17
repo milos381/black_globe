@@ -3,18 +3,27 @@ require 'net/http'
 require 'json'
 
 
-class BlackGlobe
+class BlackGlobe::Api
 
-require 'net/http'
-require 'json'
-
-# Setting URL
-url = "https://prime.exchangerate-api.com/v5/33abda6f0da266a7c858930b/latest/USD"
-uri = URI(url)
-response = Net::HTTP.get(uri)
-response_obj = JSON.parse(response)
-
-# Getting a rate
-rate = response_obj['conversion_rates']['EUR']
-							
+  require 'net/http'
+  require 'json'
+  
+  def setting_url
+    url = "https://v6.exchangerate-api.com/v6/33abda6f0da266a7c858930b/latest/USD"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    response_obj = JSON.parse(response)
+  end
+  
+  def rate
+    rate = response_obj['conversion_rates']['EUR']
+  end							
 end
+
+
+#do I need to connnect files in between?
+#how do I access the rate from my CLI class?
+#how do I manipulate with the url link provided?
+#how do I know if my CLI class is working?
+#debug my CLI class
+#do I need to call greeting.rb since outside of class and if yes, how?(not working in BIN file)
