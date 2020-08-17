@@ -25,5 +25,5 @@ end
 #how do I access the rate from my CLI class?
 #how do I manipulate with the url link provided?
 #how do I know if my CLI class is working?
-#debug my CLI class
+#how to connect input and variables (@country_one, @country_two, @input)
 #do I need to call greeting.rb since outside of class and if yes, how?(not working in BIN file)
