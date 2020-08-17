@@ -1,2 +1,4 @@
 require_relative "../lib/enviroment.rb"
-Greet.new
+initiate = Greet.new
+initiate.greet
+

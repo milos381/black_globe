@@ -54,7 +54,5 @@ class Greet
   end
 end
 
-initiate = Greet.new
-initiate.greet
 
 
