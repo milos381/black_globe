@@ -1,4 +1,4 @@
-class BlackGlobe::Cli
+class BlackGlobeCli
   
   attr_accessor :country_one, :country_two, :input_value
   
