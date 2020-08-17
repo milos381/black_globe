@@ -1,2 +1,49 @@
 require_relative "../lib/enviroment.rb"
-BlackGlobe::Cli.new.greeting
+greet_array = [
+"Hello, traveler!",
+"",
+"Welcome to Black Globe online exchange office! Please type the country of destination for today:",
+""
+]
+country_array = [
+"United Arab Emirates",
+"Argentina",
+"Australia",
+"Bulgaria",
+"Canada",
+"Switzerland",
+"Chile",
+"China",
+"Colombia",
+"Czech Republic",
+"Denmark",
+"Dominican Republic",
+"Egypt",
+"European Union",
+"United Kingdom",
+"Hungary",
+"Israel",
+"India",
+"Mexico",
+"Malaysia",
+"Norway",
+"Poland",
+"Paraguay",
+"Russia",
+"Sweden",
+"Turkey",
+"Taiwan",
+"Ukraine",
+]
+def greet(greet_array, country_array)
+  greet_array.each  do |n|
+  puts n
+  sleep 1
+  end
+country_array.each  do |n|
+  puts n
+  sleep 0.1
+  end
+end
+
+greet(greet_array, country_array)
