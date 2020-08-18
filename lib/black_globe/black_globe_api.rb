@@ -1,23 +1,22 @@
 require "open-uri"
 require 'net/http'
 require 'json'
-
-
 class BlackGlobeApi
 
-  require 'net/http'
-  require 'json'
-  
-  def setting_url
-    url = "https://v6.exchangerate-api.com/v6/33abda6f0da266a7c858930b/latest/USD"
+
+  # Setting URL
+  def setting
+    url = "https://prime.exchangerate-api.com/v5/33abda6f0da266a7c858930b/latest/USD"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     response_obj = JSON.parse(response)
+    response_obj
   end
   
-  def rate
-    rate = response_obj['conversion_rates']['EUR']
-  end							
+  # Getting a rate
+  def rate_return
+    setting['conversion_rates']['EUR']
+  end
 end
 
 
