@@ -23,7 +23,13 @@ class BlackGlobeApi
     value = @val
     setting['conversion_rates'][value]
   end
+  def printing_api
+    if printing_api
+      BlackGlobeApi.new
+    end
+  end
 end
+#BlackGlobeApi.new("USD", "EUR").rate_return
 
 
 
