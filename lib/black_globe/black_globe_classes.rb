@@ -72,15 +72,12 @@ class BlackGlobeCli
   end
 
   def from=(input)
-    puts "Please enter the currency code:"
     gets.strip
   end
   def to=(input)
-    puts "Please enter the currency code:"
     gets.strip
   end
   def money=(input)
-    puts "Please enter the currency code:"
     gets.strip
   end
 

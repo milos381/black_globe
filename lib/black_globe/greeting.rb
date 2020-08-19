@@ -56,13 +56,14 @@ def initial_greeting
 
     ]
 
-    ]
-  puts "Welcome to Black Globe, an online currency exchange office"
-  puts ""
-  puts "In order to proceed, please enter currencies for transaction as they appear in the list below:"
-  puts array
-  
+    puts "--------------------------------------------------------------------------------"
+    puts "|                                                                              |"
+    puts "|          Welcome to Black Globe, terminal currency exchange office           |"
+    puts "|                                                                              |"
+    puts "|         To proceed, enter three letter code for desired transaction          |"
+    puts "|                                                                              |"
+    puts "--------------------------------------------------------------------------------"
+    puts ""
+    puts array
+
 end
-
-initial_greeting
-
