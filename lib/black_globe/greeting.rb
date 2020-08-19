@@ -1,4 +1,5 @@
-def initial_greeting
+class Start
+  def initial_greeting
   array = [
 " Code   Currency Name",
 "1. AED	UAE Dirham",
@@ -65,5 +66,23 @@ def initial_greeting
     puts "--------------------------------------------------------------------------------"
     puts ""
     puts array
+    puts ""
+    first
+    second
+    third
+    BlackGlobeCli.new(first, second, third).result
+  end
 
+  def first
+    puts "Enter first currency code"
+    input = gets.strip
+  end
+  def second
+    puts "Enter second currency code"
+    gets.strip
+  end
+  def third
+    puts "Enter amount to exchange"
+    amount = gets.strip
+  end
 end

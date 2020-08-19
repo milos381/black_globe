@@ -1,10 +1,11 @@
+require 'pry'
 class BlackGlobeCli
 
   class CurrencyNotSupported < StandardError; end
 
   attr_accessor :from, :to, :money
 
-  def initialize(from, to, money)
+  def initialize(from = nil, to = nil, money = nil)
     [from, to].each { |code| raise CurrencyNotSupported if !self.all.include?code}
 
 
@@ -71,16 +72,24 @@ class BlackGlobeCli
 
   end
 
-  def from=(input)
-    gets.strip
+  # def from=(input)
+  #   gets.strip
+  # end
+  # def to=(input)
+  #   gets.strip
+  # end
+  # def money=(input)
+  #   gets.strip
+  # end
+  def money
+    @money
   end
-  def to=(input)
-    gets.strip
+  def from
+    @from
   end
-  def money=(input)
-    gets.strip
+  def to
+    @to
   end
-
   def exchange_rate
 
     BlackGlobeApi.new(from, to).rate_return
@@ -88,7 +97,8 @@ class BlackGlobeCli
   end
 
   def result
-    money * exchange_rate
+    final = money.to_i * exchange_rate
+    puts "The amount of money after conversion of your #{money} #{from} is #{final} #{to}."
   end
 
 end
