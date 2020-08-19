@@ -1,11 +1,11 @@
-class CurrencyExchanger
+class BlackGlobeCli
 
   class CurrencyNotSupported < StandardError; end
 
   attr_accessor :from, :to, :money
 
   def initialize(from, to, money)
-    [from, to].each { |code| raise CurrencyNotSupported if self.all.exclude?(code)}
+    [from, to].each { |code| raise CurrencyNotSupported if !self.all.include?code}
 
 
     @from = from
@@ -86,13 +86,12 @@ class CurrencyExchanger
 
   def exchange_rate
 
-    BlackGlobeApi.new(from=(input), to=(input)).rate_return
+    BlackGlobeApi.new(from, to).rate_return
 
   end
 
   def result
-    money=(input) * exchange_rate
+    money * exchange_rate
   end
-
 
 end
