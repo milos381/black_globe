@@ -2,11 +2,16 @@ require "open-uri"
 require 'net/http'
 require 'json'
 class BlackGlobeApi
-
+  attr_accessor :inp, :val
+  def initialize(inp, val)
+    @inp = inp
+    @val = val
+  end
 
   # Setting URL
   def setting
-    url = "https://prime.exchangerate-api.com/v5/33abda6f0da266a7c858930b/latest/USD"
+    input = @inp
+    url = "https://prime.exchangerate-api.com/v5/33abda6f0da266a7c858930b/latest/" + input
     uri = URI(url)
     response = Net::HTTP.get(uri)
     response_obj = JSON.parse(response)
@@ -15,9 +20,12 @@ class BlackGlobeApi
   
   # Getting a rate
   def rate_return
-    setting['conversion_rates']['EUR']
+    value = @val
+    setting['conversion_rates'][value]
   end
 end
+
+
 
 
 #do I need to connnect files in between?
