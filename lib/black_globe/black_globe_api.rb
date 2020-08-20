@@ -5,10 +5,10 @@ require 'pry'
 class BlackGlobeApi
   attr_accessor :inp, :val
    @@all = []
-  def initialize(inp, val)
+  def initialize(inp, val = nil)
     @inp = inp
     @val = val
-    @@all << self
+    @@all << self.all_rates
   end
   def self.all
     @@all
@@ -29,8 +29,10 @@ class BlackGlobeApi
     setting['conversion_rates'][value]
   end
   def all_rates
+
     value = @val
     setting['conversion_rates']
+
   end
   # def printing_api
   #   if printing_api
@@ -38,7 +40,7 @@ class BlackGlobeApi
   #   end
   # end
 end
-#BlackGlobeApi.new("USD", "EUR").rate_return
+BlackGlobeApi.new("USD", "EUR")
 
 
 

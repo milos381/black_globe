@@ -95,6 +95,9 @@ class BlackGlobeCli
     BlackGlobeApi.new(from, to).rate_return
 
   end
+  # def all_api_rates
+  #   BlackGlobeApi.new(from, to).all
+  # end
 
   def result
     final = money.to_i * exchange_rate

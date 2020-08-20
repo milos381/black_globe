@@ -1,7 +1,15 @@
 class Start
-
-
-
+  def hello
+    input_one = gets.strip
+    if input_one == 'rates'
+      puts "Enter currency code"
+      input = gets.strip
+      BlackGlobeApi.new(input).all
+      exit
+    else input_one == "" || input_one == " "
+      exit
+    end
+  end
   def first
     puts "Enter first currency code"
     input = gets.strip
@@ -76,12 +84,15 @@ class Start
     puts "|                                                                              |"
     puts "|          Welcome to Black Globe, terminal currency exchange office           |"
     puts "|                                                                              |"
-    puts "|         To proceed, enter three letter code for desired transaction          |"
+    puts "|            To proceed, press ENTER to continue with transaction,             |"
+    puts "|                                                                              |"
+    puts "|     or type 'rates' to see all the conversion rates for desired currency     |"
     puts "|                                                                              |"
     puts "--------------------------------------------------------------------------------"
     puts ""
-    puts array
+    #puts array
     puts ""
+    hello
     BlackGlobeCli.new(first, second, third).result
   end
 
