@@ -3,15 +3,24 @@ require 'net/http'
 require 'json'
 require 'pry'
 class BlackGlobeApi
-  attr_accessor :inp, :val
-   @@all = []
+  @@all = []
+  attr_accessor :inp, :val, :rate_value
+
   def initialize(inp, val = nil)
     @inp = inp
     @val = val
-    @@all << self.all_rates
+    @rate_value = []
+    @rate_value << self.rate_return
+    @@all << self
+
   end
   def self.all
+
     @@all
+  end
+  def rate_value
+    @rate_value
+
   end
   # Setting URL
   def setting
@@ -39,8 +48,9 @@ class BlackGlobeApi
   #     BlackGlobeApi.new
   #   end
   # end
+
 end
-BlackGlobeApi.new("USD", "EUR")
+#BlackGlobeApi.new("USD", "EUR")
 
 
 

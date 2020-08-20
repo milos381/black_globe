@@ -1,14 +1,29 @@
+require 'pry'
 class Start
+  def ask_to_continue
+    puts "Would you like to continue? Type 'yes' for yes and 'no' to exit CLI."
+    input = gets.strip
+    if input == "yes"
+      nil
+    elsif input == "no"
+      exit
+    else
+      puts "Sorry, could not accept that. Exiting program..."
+      exit
+    end
+  end
   def hello
     input_one = gets.strip
     if input_one == 'rates'
-      puts "Enter currency code"
-      input = gets.strip
-      BlackGlobeApi.new(input).all
-      exit
-    else input_one == "" || input_one == " "
-      exit
+      puts "Enter first currency code"
+      input_f = gets.strip
+      puts "Enter secong currency code"
+      input_s = gets.strip
+      fin = BlackGlobeApi.new(input_f, input_s)
+      puts fin.rate_value
+      ask_to_continue
     end
+
   end
   def first
     puts "Enter first currency code"
@@ -86,14 +101,14 @@ class Start
     puts "|                                                                              |"
     puts "|            To proceed, press ENTER to continue with transaction,             |"
     puts "|                                                                              |"
-    puts "|     or type 'rates' to see all the conversion rates for desired currency     |"
+    puts "|       or type 'rates' to see the conversion rate for desired currencies      |"
     puts "|                                                                              |"
     puts "--------------------------------------------------------------------------------"
     puts ""
-    #puts array
-    puts ""
     hello
+    puts ""
     BlackGlobeCli.new(first, second, third).result
+
   end
 
 end
