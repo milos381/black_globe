@@ -1,13 +1,18 @@
 require "open-uri"
 require 'net/http'
 require 'json'
+require 'pry'
 class BlackGlobeApi
   attr_accessor :inp, :val
+   @@all = []
   def initialize(inp, val)
     @inp = inp
     @val = val
+    @@all << self
   end
-
+  def self.all
+    @@all
+  end
   # Setting URL
   def setting
     input = @inp
@@ -22,6 +27,10 @@ class BlackGlobeApi
   def rate_return
     value = @val
     setting['conversion_rates'][value]
+  end
+  def all_rates
+    value = @val
+    setting['conversion_rates']
   end
   # def printing_api
   #   if printing_api

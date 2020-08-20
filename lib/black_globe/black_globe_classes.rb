@@ -102,3 +102,4 @@ class BlackGlobeCli
   end
 
 end
+#object class!!!!
