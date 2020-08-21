@@ -1,5 +1,12 @@
 require 'pry'
 class Start
+  class CurrencyNotSupported < StandardError
+
+    def message
+      "Invalid currency code. Plase, try again."
+    end
+
+  end
   def ask_to_continue
     puts "Would you like to continue? Type 'yes' for yes and 'no' to exit CLI."
     input = gets.strip
@@ -12,6 +19,17 @@ class Start
       exit
     end
   end
+  # if [input_f, input_s].each {|code|!BlackGlobeObject.new(input_f, input_s).all.include?code}
+  #   begin
+  #     raise CurrencyNotSupported
+  #   rescue CurrencyNotSupported => error
+  #     puts error.message
+  #     Start.new.initial_greeting
+  #   end
+  # else
+  #   nil
+  # end
+
   def hello
     input_one = gets.strip
     if input_one == 'rates'
@@ -22,7 +40,23 @@ class Start
       fin = BlackGlobeApi.new(input_f, input_s)
       puts fin.rate_value
       ask_to_continue
+    elsif input_one == ""
+      nil
+    else
+      puts "Command not found.Exiting CLI"
+      exit
     end
+    # if [input_f, input_s].each {|code|!BlackGlobeObject.new(input_f, input_s).all.include?code}
+    #   begin
+    #     raise CurrencyNotSupported
+    #   rescue CurrencyNotSupported => error
+    #     puts error.message
+    #     Start.new.initial_greeting
+    #   end
+    # else
+    #   nil
+    # end
+
 
   end
   def first
@@ -107,7 +141,7 @@ class Start
     puts ""
     hello
     puts ""
-    BlackGlobeCli.new(first, second, third).result
+    BlackGlobeObject.new(first, second, third).result
 
   end
 
