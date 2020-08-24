@@ -86,15 +86,7 @@ class BlackGlobeObject
 
   end
 
-  # def from=(input)
-  #   gets.strip
-  # end
-  # def to=(input)
-  #   gets.strip
-  # end
-  # def money=(input)
-  #   gets.strip
-  # end
+
   def money
     @money
   end

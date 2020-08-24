@@ -1,8 +1,6 @@
 # BlackGlobe
 
-Welcome to Black Globe! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/black_globe`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Black Globe! This is a currency exchange CLI that allows the user to see the most current rates for supported codes or to do the trasaction.
 
 ## Installation
 

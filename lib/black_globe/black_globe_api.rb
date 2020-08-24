@@ -43,11 +43,7 @@ class BlackGlobeApi
     setting['conversion_rates']
 
   end
-  # def printing_api
-  #   if printing_api
-  #     BlackGlobeApi.new
-  #   end
-  # end
+
 
 end
 #BlackGlobeApi.new("USD", "EUR")
