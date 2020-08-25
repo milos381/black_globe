@@ -1,14 +1,14 @@
 require 'pry'
 class Start
-  class CurrencyNotSupported < StandardError
-
-    def message
-      "Invalid currency code. Plase, try again."
-    end
-
-  end
+  # class CurrencyNotSupported < StandardError
+  #
+  #   def message
+  #     "Invalid currency code. Plase, try again."
+  #   end
+  #
+  # end
   def ask_to_continue
-    puts "Would you like to continue? Type 'yes' for yes and 'no' to exit CLI."
+    puts "Would you like to continue to transaction? Type 'yes' for yes and 'no' to exit CLI."
     input = gets.strip
     if input == "yes"
       nil
@@ -34,8 +34,8 @@ class Start
     elsif input_one == ""
       nil
     else
-      puts "Command not found.Exiting CLI"
-      exit
+      puts "Command not found."
+      ask_to_continue
     end
 
 
@@ -52,7 +52,7 @@ class Start
     puts "Enter amount to exchange"
     amount = gets.strip
   end
-#   def initial_greeting
+  def initial_greeting
 #   array = [
 # " Code   Currency Name",
 # "1. AED	UAE Dirham",

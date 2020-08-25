@@ -1,28 +1,19 @@
 require 'pry'
 class BlackGlobeObject
 
-  class CurrencyNotSupported < StandardError
-
-    def message
-      "Invalid currency code. Plase, try again."
-    end
-
-  end
+  # class CurrencyNotSupported < StandardError
+  #
+  #   def message
+  #     "Invalid currency code. Plase, try again."
+  #   end
+  #
+  # end
 
   attr_accessor :from, :to, :money
 
   def initialize(from = nil, to = nil, money = nil)
     #[from, to].each { |code| raise CurrencyNotSupported if !self.all.include?code}
-    if [from, to].each {|code| !self.all.include?code}
-      begin
-        raise CurrencyNotSupported
-      rescue CurrencyNotSupported => error
-        puts error.message
-        Start.new.initial_greeting
-      end
-    else
-      nil
-    end
+
     @from = from
     @to = to
     @money = money
