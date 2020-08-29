@@ -28,8 +28,8 @@ class Start
       input_f = gets.strip
       puts "Enter secong currency code"
       input_s = gets.strip
-      fin = BlackGlobeApi.new(input_f, input_s)
-      puts fin.rate_value
+      fin = Transaction.new(input_f, input_s)
+      puts fin.exchange_rate
       ask_to_continue
     elsif input_one == ""
       nil
@@ -122,7 +122,7 @@ class Start
     puts ""
     hello
     puts ""
-    BlackGlobeObject.new(first, second, third).result
+    Transaction.new(first, second, third).result
 
   end
 

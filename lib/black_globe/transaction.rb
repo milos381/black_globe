@@ -1,5 +1,5 @@
 require 'pry'
-class BlackGlobeObject
+class Transaction
 
   # class CurrencyNotSupported < StandardError
   #
@@ -9,7 +9,7 @@ class BlackGlobeObject
   #
   # end
 
-  attr_accessor :from, :to, :money
+  attr_accessor :from, :to, :money#, rate_value
 
   def initialize(from = nil, to = nil, money = nil)
     #[from, to].each { |code| raise CurrencyNotSupported if !self.all.include?code}
@@ -17,6 +17,9 @@ class BlackGlobeObject
     @from = from
     @to = to
     @money = money
+    # @rate_value = []
+    # @rate_value << Api.new(from, to).rate_return
+
   end
 
   def all
@@ -87,18 +90,26 @@ class BlackGlobeObject
   def to
     @to
   end
-  def exchange_rate
 
-    BlackGlobeApi.new(from, to).rate_return
+  def rate_value
+    @rate_value
 
   end
   # def all_api_rates
   #   BlackGlobeApi.new(from, to).all
   # end
 
+  def exchange_rate
+
+    Api.new(from, to).setting['conversion_rates'][to]
+
+  end
+
   def result
     final = money.to_i * exchange_rate
     puts "The amount of money after conversion of your #{money} #{from} is #{final} #{to}."
+    puts ""
+    Start.new.initial_greeting
   end
 
 end
