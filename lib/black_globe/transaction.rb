@@ -1,24 +1,15 @@
 require 'pry'
 class Transaction
 
-  # class CurrencyNotSupported < StandardError
-  #
-  #   def message
-  #     "Invalid currency code. Plase, try again."
-  #   end
-  #
-  # end
 
-  attr_accessor :from, :to, :money#, rate_value
+
+  attr_accessor :from, :to, :money
 
   def initialize(from = nil, to = nil, money = nil)
-    #[from, to].each { |code| raise CurrencyNotSupported if !self.all.include?code}
 
     @from = from
     @to = to
     @money = money
-    # @rate_value = []
-    # @rate_value << Api.new(from, to).rate_return
 
   end
 
@@ -95,9 +86,6 @@ class Transaction
     @rate_value
 
   end
-  # def all_api_rates
-  #   BlackGlobeApi.new(from, to).all
-  # end
 
   def exchange_rate
 
@@ -113,4 +101,3 @@ class Transaction
   end
 
 end
-#object class!!!!

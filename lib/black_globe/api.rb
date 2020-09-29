@@ -22,11 +22,5 @@ class Api
     response_obj
   end
 
-  # Getting a rate
-  # def rate_return
-  #   value = @val
-  #   setting['conversion_rates'][value]
-  # end
 
 end
-#BlackGlobeApi.new("USD", "EUR")
