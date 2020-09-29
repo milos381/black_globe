@@ -1,5 +1,5 @@
 require 'pry'
-class Start
+class CLI
 
   def ask_to_continue
     puts "Would you like to continue to transaction? Type 'yes' for yes and 'no' to exit CLI."

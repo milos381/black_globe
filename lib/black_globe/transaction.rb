@@ -97,7 +97,7 @@ class Transaction
     final = money.to_i * exchange_rate
     puts "The amount of money after conversion of your #{money} #{from} is #{final} #{to}."
     puts ""
-    Start.new.initial_greeting
+    CLI.new.initial_greeting
   end
 
 end
